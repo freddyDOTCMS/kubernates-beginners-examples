@@ -1,0 +1,13 @@
+{
+    "name": "lucky-number-app",
+    "version": "1.0.0",
+    "description": "A simple lucky number generator with startup and request delay",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  

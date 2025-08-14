@@ -1,0 +1,25 @@
+{
+    "name": "lucky-web-app",
+    "version": "1.0.0",
+    "description": "SSR React app that fetches and displays a lucky number",
+    "main": "server.js",
+    "scripts": {
+      "start": "babel-node server.js",
+      "dev": "babel-node server.js",
+      "build": "babel server.js -d dist"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "node-fetch": "^2.7.0"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.23.0",
+      "@babel/core": "^7.23.0",
+      "@babel/node": "^7.22.0",
+      "@babel/preset-env": "^7.23.0",
+      "@babel/preset-react": "^7.22.0"
+    }
+  }
+  

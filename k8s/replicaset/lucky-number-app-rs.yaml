@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: lucky-number-app-rs
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: lucky-number
+      tier: backend
+  template:
+    metadata:
+      name: lucky-number-app
+      labels:
+        app: lucky-number
+        tier: backend
+    spec:
+      containers:
+        - name: lucky-number-app
+          image: kubernates-example/lucky-number-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3001
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name  

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lucky-web-app
+  labels:
+    app: lucky-web
+    tier: frontend
+spec:
+  containers:
+    - name: lucky-web-app
+      image: kubernates-example/lucky-web-app:latest
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 4000
+      env:
+        - name: LUCKY_API_URL
+          value: http://lucky-number-app-service:3001/lucky  

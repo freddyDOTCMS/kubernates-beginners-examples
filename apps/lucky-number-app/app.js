@@ -27,7 +27,7 @@ app.get('/lucky', async (req, res) => {
   // Simulate request processing time
   busyWait(5000); // 5 seconds delay
 
-  const luckyNumber = Math.floor(1000 + Math.random() * 9000); // 4-digit number
+  const luckyNumber = Math.floor(10 + Math.random() * 90); // 2-digit number
   console.log(`Generated lucky number: ${luckyNumber} in pod ${podName}`);
 
   res.json({ luckyNumber });
@@ -37,11 +37,6 @@ app.get('/ping', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.get('/crash', (req, res) => {
-  res.json({ message: 'Server will crash now!' });
-  console.log('Crashing server via /crash endpoint...');
-  process.exit(1);
-});
 
 startupDelay().then(() => {
   app.listen(PORT, () => {

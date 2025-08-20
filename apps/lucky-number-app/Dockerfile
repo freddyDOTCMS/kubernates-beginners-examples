@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Expose port used by Express
-EXPOSE 3000
+EXPOSE 3001
 
 # Start the app
 CMD ["npm", "start"]
